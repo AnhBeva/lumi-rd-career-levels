@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Khung Level R&D Lumi</title>
+    <meta
+      name="description"
+      content="Trang tra cứu khung level nghề nghiệp cho các vị trí R&D Lumi: Thiết kế, Cơ khí, Hardware, Firmware, Software, App, QA, PM và BA."
+    />
+    <link rel="stylesheet" href="assets/styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <nav class="topbar" aria-label="Điều hướng chính">
+        <a class="brand" href="#top" aria-label="Khung Level R&D Lumi">
+          <span class="brand-mark">L</span>
+          <span>R&D Lumi</span>
+        </a>
+        <div class="top-actions">
+          <a href="#profile">Profile R&D</a>
+          <a href="#levels">9 Vị trí</a>
+          <a href="#compare">Tra cứu nhanh</a>
+        </div>
+      </nav>
+
+      <section id="top" class="hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Career Levels</p>
+          <h1>Khung level R&D Lumi, rõ ràng để tự soi và phát triển.</h1>
+          <p class="hero-text">
+            Tổng hợp profile R&D Lumi và 9 tài liệu level theo từng vị trí, trình bày thành một
+            webpage sáng, dễ tìm, dễ check và dễ truy xuất.
+          </p>
+          <div class="hero-search" role="search">
+            <label for="globalSearch">Tìm nhanh</label>
+            <input id="globalSearch" type="search" placeholder="Nhập: firmware, checklist, ownership, QA..." />
+          </div>
+        </div>
+        <div class="hero-panel" aria-label="Tổng quan tài liệu">
+          <div class="metric">
+            <strong>9</strong>
+            <span>vị trí độc lập</span>
+          </div>
+          <div class="metric">
+            <strong>10</strong>
+            <span>mục chuẩn mỗi file</span>
+          </div>
+          <div class="metric">
+            <strong>1</strong>
+            <span>profile R&D tổng quan</span>
+          </div>
+        </div>
+      </section>
+    </header>
+
+    <main>
+      <section id="profile" class="section">
+        <div class="section-heading">
+          <p class="eyebrow">Lumi R&D Profile</p>
+          <h2>Hệ sinh thái R&D</h2>
+          <p>
+            R&D Lumi phát triển sản phẩm smart home, smart lighting, AI và IoT từ ý tưởng đến
+            thiết kế, phần cứng, firmware, software, app, QA và triển khai thực tế.
+          </p>
+        </div>
+        <div class="ecosystem">
+          <article>
+            <span>01</span>
+            <h3>Thiết bị vật lý</h3>
+            <p>Công tắc, cảm biến, chiếu sáng, module điều khiển và thiết bị IoT.</p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>Firmware & kết nối</h3>
+            <p>MCU, Zigbee, Bluetooth Mesh, WiFi, KNX và logic điều khiển cục bộ.</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>Gateway & cloud</h3>
+            <p>Hub, Home Controller, AIH, backend, dữ liệu, tự động hóa và vận hành.</p>
+          </article>
+          <article>
+            <span>04</span>
+            <h3>Ứng dụng & trải nghiệm</h3>
+            <p>Mobile, desktop, UI/UX, cấu hình, điều khiển và trải nghiệm người dùng.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="levels" class="section">
+        <div class="section-heading">
+          <p class="eyebrow">Role Library</p>
+          <h2>Chọn vị trí để xem khung level</h2>
+          <p>Mỗi vị trí có trang nội dung riêng: phạm vi, đầu vào/đầu ra, level, checklist và lỗi thường gặp.</p>
+        </div>
+        <div id="roleCards" class="role-grid" aria-label="Danh sách vị trí"></div>
+      </section>
+
+      <section id="compare" class="section split">
+        <aside class="doc-nav" aria-label="Mục lục tài liệu">
+          <div class="sticky-box">
+            <p class="eyebrow">Truy xuất</p>
+            <h2>Nội dung</h2>
+            <div id="docTabs" class="doc-tabs"></div>
+          </div>
+        </aside>
+        <article class="doc-shell">
+          <div class="doc-toolbar">
+            <div>
+              <p class="eyebrow" id="activeKind">Đang tải</p>
+              <h2 id="activeTitle">Khung Level R&D Lumi</h2>
+            </div>
+            <a id="sourceLink" class="source-link" href="#" target="_blank" rel="noreferrer">Mở file nguồn</a>
+          </div>
+          <div id="searchSummary" class="search-summary" hidden></div>
+          <div id="docContent" class="doc-content"></div>
+        </article>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>Dữ liệu được tổng hợp từ <code>lumi-rd-profile.md</code> và thư mục <code>lumi-rd-career-levels/</code>.</p>
+    </footer>
+
+    <script src="assets/app.js"></script>
+  </body>
+</html>
