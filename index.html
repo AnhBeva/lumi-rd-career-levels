@@ -3,126 +3,375 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Khung Level R&D Lumi</title>
+    <title>Khung Phát Triển Nghề Nghiệp R&D Lumi</title>
     <meta
       name="description"
-      content="Trang tra cứu khung level nghề nghiệp cho các vị trí R&D Lumi: Thiết kế, Cơ khí, Hardware, Firmware, Software, App, QA, PM và BA."
+      content="Trang tra cứu tương tác khung level nghề nghiệp cho các vị trí R&D Lumi: Thiết kế, Cơ khí, Hardware, Firmware, Software, App, QA, PM và BA."
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/styles.css" />
   </head>
   <body>
-    <header class="hero">
-      <nav class="topbar" aria-label="Điều hướng chính">
-        <a class="brand" href="#top" aria-label="Khung Level R&D Lumi">
-          <span class="brand-mark">L</span>
-          <span>R&D Lumi</span>
-        </a>
-        <div class="top-actions">
-          <a href="#profile">Profile R&D</a>
-          <a href="#levels">9 Vị trí</a>
-          <a href="#compare">Tra cứu nhanh</a>
+    <!-- Top Navigation Bar -->
+    <nav class="topbar" aria-label="Điều hướng chính">
+      <a class="brand" href="#top" aria-label="Khung Level R&D Lumi">
+        <div class="brand-logo">L</div>
+        <div class="brand-text">
+          <span class="brand-title">Lumi R&D</span>
+          <span class="brand-subtitle">Career Framework</span>
         </div>
-      </nav>
+      </a>
+      
+      <div class="nav-links">
+        <button class="nav-btn active" data-tab="tab-profile">Profile R&D</button>
+        <button class="nav-btn" data-tab="tab-roles">Khung Năng Lực</button>
+        <button class="nav-btn" data-tab="tab-compare">Ma Trận So Sánh</button>
+        <button class="nav-btn" data-tab="tab-checklist">Tự Đánh Giá</button>
+      </div>
 
-      <section id="top" class="hero-grid">
-        <div class="hero-copy">
-          <p class="eyebrow">Career Levels</p>
-          <h1>Khung level R&D Lumi, rõ ràng để tự soi và phát triển.</h1>
-          <p class="hero-text">
-            Tổng hợp profile R&D Lumi và 9 tài liệu level theo từng vị trí, trình bày thành một
-            webpage sáng, dễ tìm, dễ check và dễ truy xuất.
+      <div class="top-actions">
+        <button id="themeToggle" class="theme-toggle-btn" aria-label="Chuyển chế độ sáng tối">
+          <!-- Moon Icon -->
+          <svg class="icon moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+          <!-- Sun Icon -->
+          <svg class="icon sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none;">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Main Container -->
+    <main class="main-container">
+      
+      <!-- Top Hero Section -->
+      <header class="hero-section" id="top">
+        <div class="hero-content">
+          <p class="hero-eyebrow">R&D Career Path</p>
+          <h1 class="hero-heading">Khung level R&D Lumi.<br>Rõ ràng để tự soi & phát triển.</h1>
+          <p class="hero-desc">
+            Bản đồ năng lực và lộ trình phát triển nghề nghiệp chi tiết cho 9 vị trí chuyên môn phòng R&D. Hãy bắt đầu bằng cách tra cứu hoặc tự đánh giá năng lực của bản thân.
           </p>
-          <div class="hero-search" role="search">
-            <label for="globalSearch">Tìm nhanh</label>
-            <input id="globalSearch" type="search" placeholder="Nhập: firmware, checklist, ownership, QA..." />
+          
+          <!-- Search Bar -->
+          <div class="search-container">
+            <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input type="search" id="globalSearch" placeholder="Tìm kiếm năng lực, từ khóa (Ví dụ: Rust, Zigbee, Ownership, QA, AC...)" />
+            <button id="searchClearBtn" class="search-clear-btn" aria-label="Xoá tìm kiếm" hidden>×</button>
           </div>
         </div>
-        <div class="hero-panel" aria-label="Tổng quan tài liệu">
-          <div class="metric">
-            <strong>9</strong>
-            <span>vị trí độc lập</span>
-          </div>
-          <div class="metric">
-            <strong>10</strong>
-            <span>mục chuẩn mỗi file</span>
-          </div>
-          <div class="metric">
-            <strong>1</strong>
-            <span>profile R&D tổng quan</span>
-          </div>
-        </div>
-      </section>
-    </header>
 
-    <main>
-      <section id="profile" class="section">
-        <div class="section-heading">
-          <p class="eyebrow">Lumi R&D Profile</p>
-          <h2>Hệ sinh thái R&D</h2>
-          <p>
-            R&D Lumi phát triển sản phẩm smart home, smart lighting, AI và IoT từ ý tưởng đến
-            thiết kế, phần cứng, firmware, software, app, QA và triển khai thực tế.
-          </p>
+        <div class="hero-stats">
+          <div class="stat-card">
+            <span class="stat-num">09</span>
+            <span class="stat-label">Vị trí chuyên môn</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-num">10</span>
+            <span class="stat-label">Chiều đánh giá mỗi vị trí</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-num">100%</span>
+            <span class="stat-label">Minh bạch & Tự chủ</span>
+          </div>
         </div>
-        <div class="ecosystem">
-          <article>
-            <span>01</span>
-            <h3>Thiết bị vật lý</h3>
-            <p>Công tắc, cảm biến, chiếu sáng, module điều khiển và thiết bị IoT.</p>
-          </article>
-          <article>
-            <span>02</span>
-            <h3>Firmware & kết nối</h3>
-            <p>MCU, Zigbee, Bluetooth Mesh, WiFi, KNX và logic điều khiển cục bộ.</p>
-          </article>
-          <article>
-            <span>03</span>
-            <h3>Gateway & cloud</h3>
-            <p>Hub, Home Controller, AIH, backend, dữ liệu, tự động hóa và vận hành.</p>
-          </article>
-          <article>
-            <span>04</span>
-            <h3>Ứng dụng & trải nghiệm</h3>
-            <p>Mobile, desktop, UI/UX, cấu hình, điều khiển và trải nghiệm người dùng.</p>
-          </article>
+      </header>
+
+      <!-- Global Search Results Panel -->
+      <section id="searchResultsPanel" class="search-results-panel" hidden>
+        <div class="panel-header">
+          <h2>Kết quả tìm kiếm toàn cục</h2>
+          <button id="closeSearchBtn" class="close-panel-btn">Đóng</button>
         </div>
+        <div id="searchResultsCount" class="results-meta"></div>
+        <div id="searchResultsList" class="results-list"></div>
       </section>
 
-      <section id="levels" class="section">
-        <div class="section-heading">
-          <p class="eyebrow">Role Library</p>
-          <h2>Chọn vị trí để xem khung level</h2>
-          <p>Mỗi vị trí có trang nội dung riêng: phạm vi, đầu vào/đầu ra, level, checklist và lỗi thường gặp.</p>
-        </div>
-        <div id="roleCards" class="role-grid" aria-label="Danh sách vị trí"></div>
-      </section>
-
-      <section id="compare" class="section split">
-        <aside class="doc-nav" aria-label="Mục lục tài liệu">
-          <div class="sticky-box">
-            <p class="eyebrow">Truy xuất</p>
-            <h2>Nội dung</h2>
-            <div id="docTabs" class="doc-tabs"></div>
-          </div>
-        </aside>
-        <article class="doc-shell">
-          <div class="doc-toolbar">
-            <div>
-              <p class="eyebrow" id="activeKind">Đang tải</p>
-              <h2 id="activeTitle">Khung Level R&D Lumi</h2>
+      <!-- TAB 1: PROFILE R&D -->
+      <section id="tab-profile" class="tab-content active">
+        <div class="profile-layout">
+          <aside class="profile-sidebar">
+            <div class="sticky-sidebar-card">
+              <h3>Mục lục Profile</h3>
+              <nav class="profile-nav" id="profileSectionsNav">
+                <!-- Dynamically populated -->
+              </nav>
             </div>
-            <a id="sourceLink" class="source-link" href="#" target="_blank" rel="noreferrer">Mở file nguồn</a>
-          </div>
-          <div id="searchSummary" class="search-summary" hidden></div>
-          <div id="docContent" class="doc-content"></div>
-        </article>
+          </aside>
+          <article class="profile-article">
+            <div class="glass-card profile-card">
+              <div id="profileBody" class="profile-body-content">
+                <!-- Dynamically populated -->
+              </div>
+            </div>
+          </article>
+        </div>
       </section>
+
+      <!-- TAB 2: KHUNG NĂNG LỰC (ROLES EXPLORER) -->
+      <section id="tab-roles" class="tab-content">
+        <div class="roles-explorer-layout">
+          
+          <!-- Roles Selector Sidebar -->
+          <aside class="roles-sidebar">
+            <div class="sticky-sidebar-card">
+              <h3>Chọn vị trí</h3>
+              <div class="roles-selector-list" id="rolesSelectorList">
+                <!-- Dynamically populated buttons -->
+              </div>
+            </div>
+          </aside>
+
+          <!-- Role Content Panel -->
+          <article class="role-details-panel">
+            <div class="glass-card role-main-card">
+              <!-- Header -->
+              <div class="role-header">
+                <div>
+                  <span class="role-badge" id="roleDetailBadge">Career Level</span>
+                  <h2 id="roleDetailTitle">Tên vị trí</h2>
+                </div>
+                <button id="startAssessmentBtn" class="action-btn-primary">Tự đánh giá vai trò này</button>
+              </div>
+
+              <!-- Inner Tabs for Role Sections -->
+              <div class="role-inner-tabs">
+                <button class="inner-tab-btn active" data-sec="overview">Tổng quan & Phạm vi</button>
+                <button class="inner-tab-btn" data-sec="ladder">Bản đồ Level</button>
+                <button class="inner-tab-btn" data-sec="matrix">Chi tiết Yêu cầu</button>
+                <button class="inner-tab-btn" data-sec="growth">Lộ trình & Dấu hiệu</button>
+              </div>
+
+              <!-- Inner Sections -->
+              <div class="role-section-content">
+                <!-- Section: Overview -->
+                <div id="role-sec-overview" class="inner-section active">
+                  <div class="grid-2-col">
+                    <div class="info-block">
+                      <h4>Tổng quan vai trò</h4>
+                      <p id="roleOverviewText">Nội dung...</p>
+                    </div>
+                    <div class="info-block">
+                      <h4>Đầu vào & Đầu ra</h4>
+                      <div id="roleIOContent"></div>
+                    </div>
+                  </div>
+                  <div class="full-width-block mt-4">
+                    <h4>Phạm vi công việc chính</h4>
+                    <div id="roleScopeTableContainer"></div>
+                  </div>
+                </div>
+
+                <!-- Section: Ladder -->
+                <div id="role-sec-ladder" class="inner-section">
+                  <div class="ladder-visualizer-container">
+                    <h4>Sơ đồ nấc thang nghề nghiệp</h4>
+                    <div class="ladder-flow" id="roleLadderFlow">
+                      <!-- Rendered ladder boxes -->
+                    </div>
+                    <div class="ladder-description-box" id="roleLadderDescription">
+                      <!-- Ladder description -->
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Section: Matrix -->
+                <div id="role-sec-matrix" class="inner-section">
+                  <div class="matrix-filter-bar">
+                    <span>Chọn xem theo:</span>
+                    <button class="matrix-filter-btn active" data-matrix-mode="all">Tất cả các Level (Bảng)</button>
+                    <button class="matrix-filter-btn" data-matrix-mode="single">Từng Level riêng biệt</button>
+                    <select id="singleLevelSelect" class="level-select-dropdown" style="display:none;">
+                      <!-- Level options will be dynamically filled -->
+                    </select>
+                  </div>
+                  
+                  <div class="matrix-container">
+                    <h4>So sánh chi tiết qua các Level</h4>
+                    <div id="roleSoSanhContainer" class="matrix-table-wrapper"></div>
+                    
+                    <h4 class="mt-5">Năng lực cốt lõi chi tiết</h4>
+                    <div id="roleNangLucContainer" class="matrix-table-wrapper"></div>
+                  </div>
+                </div>
+
+                <!-- Section: Growth -->
+                <div id="role-sec-growth" class="inner-section">
+                  <div class="grid-2-col">
+                    <div class="info-block">
+                      <h4>Yêu cầu để lên Level tiếp theo</h4>
+                      <div id="roleLenLevelContainer"></div>
+                    </div>
+                    <div class="info-block">
+                      <h4>Lỗi phổ biến khiến bị kẹt Level</h4>
+                      <div id="roleLoiKietContainer"></div>
+                    </div>
+                  </div>
+                  <div class="full-width-block mt-4">
+                    <h4>Dấu hiệu nhận biết tích cực & Dấu hiệu chưa tới</h4>
+                    <div id="roleDauHieuContainer"></div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- TAB 3: MA TRẬN SO SÁNH (ROLE COMPARISON MATRIX) -->
+      <section id="tab-compare" class="tab-content">
+        <div class="glass-card compare-card">
+          <div class="compare-header">
+            <h2>Ma Trận So Sánh Liên Vị Trí</h2>
+            <p class="compare-subtitle">So sánh yêu cầu năng lực cốt lõi và tiêu chí giữa các vị trí trong R&D.</p>
+          </div>
+
+          <div class="compare-controls">
+            <div class="control-group">
+              <label for="compareTypeSelect">Chế độ so sánh:</label>
+              <select id="compareTypeSelect" class="compare-select">
+                <option value="roles-compare">So sánh các Vị Trí khác nhau (cùng Level)</option>
+                <option value="dimensions-compare">So sánh các Level của một vị trí (theo chiều dọc)</option>
+              </select>
+            </div>
+
+            <!-- Controls for Roles Compare Mode -->
+            <div id="rolesCompareControls" class="control-row">
+              <div class="control-group">
+                <label>Chọn các vị trí muốn so sánh (tối đa 3):</label>
+                <div id="compareRolesCheckboxes" class="checkbox-grid">
+                  <!-- Checkboxes for roles -->
+                </div>
+              </div>
+              <div class="control-group">
+                <label for="compareLevelSelect">Chọn Level:</label>
+                <select id="compareLevelSelect" class="compare-select">
+                  <option value="Junior">Junior</option>
+                  <option value="Middle">Middle</option>
+                  <option value="Senior">Senior</option>
+                  <option value="Lead/Staff">Lead / Staff / Tech Lead</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Controls for Vertical Dimension Compare Mode -->
+            <div id="verticalCompareControls" class="control-row" style="display:none;">
+              <div class="control-group">
+                <label for="compareSingleRoleSelect">Chọn Vị trí:</label>
+                <select id="compareSingleRoleSelect" class="compare-select">
+                  <!-- Options filled dynamically -->
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- Comparison Table Area -->
+          <div class="compare-results-area">
+            <div id="compareMatrixContainer" class="matrix-table-wrapper">
+              <!-- Rendered comparison table -->
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 4: TỰ ĐÁNH GIÁ (SELF-ASSESSMENT CHECKLIST) -->
+      <section id="tab-checklist" class="tab-content">
+        <div class="checklist-layout">
+          
+          <!-- Assessment Settings & Progress Panel -->
+          <aside class="checklist-sidebar">
+            <div class="glass-card checklist-status-card">
+              <h3>Đánh giá năng lực</h3>
+              
+              <div class="form-group">
+                <label for="checklistRoleSelect">Vị trí của bạn:</label>
+                <select id="checklistRoleSelect" class="checklist-select">
+                  <!-- Dynamically populated options -->
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="checklistLevelSelect">Level mục tiêu:</label>
+                <select id="checklistLevelSelect" class="checklist-select">
+                  <!-- Dynamically populated options -->
+                </select>
+              </div>
+
+              <div class="progress-section">
+                <h4>Tiến trình hoàn thành</h4>
+                <div class="progress-radial-container">
+                  <svg class="progress-circle" viewBox="0 0 100 100">
+                    <circle class="circle-bg" cx="50" cy="50" r="40"></circle>
+                    <circle class="circle-progress" id="checklistProgressCircle" cx="50" cy="50" r="40" stroke-dasharray="251.2" stroke-dashoffset="251.2"></circle>
+                  </svg>
+                  <div class="progress-text" id="checklistProgressText">0%</div>
+                </div>
+                <div class="progress-stats-text" id="checklistStatsText">
+                  0 trên 0 tiêu chí đạt yêu cầu.
+                </div>
+              </div>
+
+              <div class="checklist-actions">
+                <button id="saveChecklistBtn" class="action-btn-primary w-100">Lưu kết quả (Local)</button>
+                <button id="resetChecklistBtn" class="action-btn-secondary w-100 mt-2">Xoá đánh giá</button>
+                <button id="exportChecklistBtn" class="action-btn-secondary w-100 mt-2">Xuất báo cáo PDF / In</button>
+              </div>
+            </div>
+          </aside>
+
+          <!-- Checklist Interactive Form -->
+          <article class="checklist-form-panel">
+            <div class="glass-card checklist-card">
+              <div class="checklist-header">
+                <div>
+                  <h2 id="checklistTitle">Bảng Tự Đánh Giá</h2>
+                  <p class="checklist-subtitle">Đánh giá bản thân dựa trên checklist và các tiêu chuẩn của vị trí.</p>
+                </div>
+                <div class="checklist-legend">
+                  <span class="legend-item"><span class="color-dot status-none"></span> Chưa có</span>
+                  <span class="legend-item"><span class="color-dot status-learning"></span> Đang học</span>
+                  <span class="legend-item"><span class="color-dot status-stable"></span> Ổn định</span>
+                  <span class="legend-item"><span class="color-dot status-excel"></span> Vượt kỳ vọng</span>
+                </div>
+              </div>
+
+              <!-- Main Checklist Questions -->
+              <div class="checklist-questions-container" id="checklistQuestionsList">
+                <!-- Checklist questions dynamically generated -->
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
     </main>
 
     <footer class="footer">
-      <p>Dữ liệu được tổng hợp từ <code>lumi-rd-profile.md</code> và thư mục <code>lumi-rd-career-levels/</code>.</p>
+      <div class="footer-content">
+        <p class="copyright">&copy; 2026 Lumi Vietnam R&D Department. All rights reserved.</p>
+        <p class="doc-info">Trang web tổng hợp dữ liệu từ 9 khung năng lực và Profile R&D. Thiết kế theo chuẩn giao diện Apple.</p>
+      </div>
     </footer>
 
+    <!-- Scripts -->
+    <script src="assets/data.js"></script>
     <script src="assets/app.js"></script>
   </body>
 </html>
