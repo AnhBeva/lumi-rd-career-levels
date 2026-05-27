@@ -412,6 +412,24 @@ function showLadderLevelDetails(role, levelName) {
       ladderDesc.innerHTML += html;
     }
   }
+
+  // Find information in "Năng lực cốt lõi" table
+  if (role.sections.nangLucCotLoi && role.sections.nangLucCotLoi.rows) {
+    const lvlIdx = role.levels.indexOf(levelName);
+    if (lvlIdx !== -1) {
+      detailsFound = true;
+      let html = `<h6 style="margin-top: 14px; font-weight: 700; color: var(--text-secondary);">NĂNG LỰC CỐT LÕI YÊU CẦU:</h6>`;
+      html += `<ul style="margin-top:8px; padding-left: 20px;">`;
+      role.sections.nangLucCotLoi.rows.forEach(row => {
+        const val = row.levels[lvlIdx] || "";
+        if (val) {
+          html += `<li style="margin-bottom: 8px;"><strong>${formatInlineHtml(row.category)}:</strong> ${formatInlineHtml(val)}</li>`;
+        }
+      });
+      html += `</ul>`;
+      ladderDesc.innerHTML += html;
+    }
+  }
   
   if (!detailsFound) {
     ladderDesc.innerHTML += `<p class="text-muted">Không tìm thấy mô tả chi tiết cho level này.</p>`;
@@ -807,6 +825,9 @@ function renderChecklistQuestions() {
     row.querySelectorAll('input[type="radio"]').forEach(radio => {
       radio.addEventListener('change', (e) => {
         appState.checklistAnswers[index] = e.target.value;
+        // Auto-save checklist to localStorage
+        const storageKey = `lumi_assessment_${appState.checklistRoleId}_${appState.checklistLevelId}`;
+        localStorage.setItem(storageKey, JSON.stringify(appState.checklistAnswers));
         calculateChecklistProgress(checklistItems.length);
       });
     });
